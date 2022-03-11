@@ -1,4 +1,4 @@
-<samp><b>Anthony's VS Code Setttings</b></samp>
+<samp><b>Anthony's VS Code Settings</b></samp>
 
 [`.vscode/settings.json`](./.vscode/settings.json)<br>
 [`.vscode/extensions.json`](./.vscode/extensions.json)
