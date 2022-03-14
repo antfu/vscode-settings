@@ -1,5 +1,6 @@
 {
   "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": true,
   "editor.cursorSmoothCaretAnimation": true,
   "editor.find.addExtraSpaceOnTop": false,
   "editor.fontFamily": "Input Mono, Fira Code, monospace",
