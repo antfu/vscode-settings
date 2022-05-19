@@ -176,7 +176,7 @@
   "volar.codeLens.scriptSetupTools": true,
   "volar.completion.preferredTagNameCase": "pascal",
   "volar.showWelcomePage": false,
-  "volar.takeOverMode.enabled": true,
+  "volar.takeOverMode.enabled": "auto",
   "windicss.enableCodeFolding": false,
   "prettier.enable": false, // I only use Prettier for manually formatting
   "prettier.printWidth": 200,
