@@ -11,7 +11,7 @@
 
   // Editor
   "editor.accessibilitySupport": "off",
-  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorSmoothCaretAnimation": "on",
   "editor.find.addExtraSpaceOnTop": false,
   "editor.guides.bracketPairs": "active",
   "editor.inlineSuggest.enabled": true,
@@ -171,8 +171,6 @@
   "iconify.inplace": true,
   "svg.preview.mode": "svg",
   "volar.autoCompleteRefs": false,
-  "volar.codeLens.pugTools": false,
-  "volar.codeLens.scriptSetupTools": true,
   "volar.completion.preferredTagNameCase": "pascal",
   "windicss.enableCodeFolding": false,
   "prettier.enable": false, // I only use Prettier for manually formatting
