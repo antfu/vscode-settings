@@ -184,10 +184,6 @@
   "prettier.semi": false,
   "prettier.singleQuote": true,
 
-  "volar.autoCompleteRefs": false,
-  "volar.codeLens.pugTools": false,
-  "volar.completion.preferredTagNameCase": "pascal",
-
   // File Nesting
   // this might not be up to date with the repo, please check yourself
   // https://github.com/antfu/vscode-file-nesting-config
