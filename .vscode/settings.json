@@ -101,6 +101,12 @@
     "enable": true
   },
   "eslint.quiet": true,
+  "eslint.rules.customizations": [
+    {
+      "rule": "@stylistic/*",
+      "severity": "off"
+    }
+  ],
   "eslint.validate": [
     "javascript",
     "typescript",
