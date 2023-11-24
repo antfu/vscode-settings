@@ -1,6 +1,5 @@
 {
   // Visuals
-  "workbench.activityBar.visible": true,
   "workbench.colorTheme": "Vitesse Dark",
   "workbench.editor.tabCloseButton": "left",
   "workbench.fontAliasing": "antialiased",

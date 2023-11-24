@@ -24,15 +24,13 @@
     "streetsidesoftware.code-spell-checker",
 
     // up to you
-    "amodio.tsl-problem-matcher",
     "eamodio.gitlens",
     "EditorConfig.EditorConfig",
+    "github.vscode-github-actions",
     "GitHub.vscode-pull-request-github",
+    "johnsoncodehk.vscode-tsconfig-helper",
     "mpontus.tab-cycle",
     "naumovs.color-highlight",
-    "richie5um2.vscode-sort-json",
-    "unional.vscode-sort-package-json",
-    "voorjaar.windicss-intellisense",
     "WakaTime.vscode-wakatime",
     "znck.grammarly"
   ]
