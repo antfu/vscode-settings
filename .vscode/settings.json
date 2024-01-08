@@ -1,9 +1,15 @@
 {
-  // Visuals
+  // ========== Visuals ==========
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.fontFamily": "Input Mono, monospace",
+  "editor.guides.bracketPairs": "active",
+  "editor.lineNumbers": "interval",
+  "editor.renderWhitespace": "boundary",
+  "window.autoDetectColorScheme": true,
   "workbench.colorTheme": "Vitesse Dark",
-  "workbench.editor.tabCloseButton": "left",
+  "workbench.editor.tabActionLocation": "left",
   "workbench.fontAliasing": "antialiased",
-  "workbench.iconTheme": "file-icons",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.list.smoothScrolling": true,
   "workbench.preferredDarkColorTheme": "Vitesse Dark",
   "workbench.preferredLightColorTheme": "Vitesse Light",
@@ -12,42 +18,26 @@
   "workbench.startupEditor": "newUntitledFile",
   "workbench.tree.expandMode": "singleClick",
   "workbench.tree.indent": 10,
-  "editor.fontFamily": "Input Mono, Fira Code, monospace",
-  "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss06', 'zero'",
 
-  // Editor
-  "editor.accessibilitySupport": "off",
-  "editor.cursorSmoothCaretAnimation": "on",
+  // ========== Editor ========== 
+  "debug.onTaskErrors": "debugAnyway",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
   "editor.find.addExtraSpaceOnTop": false,
-  "editor.guides.bracketPairs": "active",
   "editor.inlineSuggest.enabled": true,
-  "editor.lineNumbers": "interval",
   "editor.multiCursorModifier": "ctrlCmd",
-  "editor.renderWhitespace": "boundary",
   "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.stickyScroll.enabled": true,
   "editor.hover.sticky": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll": false,
-    "source.fixAll.eslint": true, // this allows ESLint to auto fix on save
-    "source.organizeImports": false
+    "source.fixAll": "never",
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
   },
-  "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
-  "window.autoDetectColorScheme": true,
-  "window.dialogStyle": "custom",
-  "window.nativeTabs": true, // this is great, macOS only
-  "window.titleBarStyle": "custom",
-  "workbench.editor.closeOnFileDelete": true,
-  "workbench.editor.highlightModifiedTabs": true,
-  "workbench.editor.limit.enabled": true,
-  "workbench.editor.limit.perEditorGroup": true,
-  "workbench.editor.limit.value": 5,
-  "extensions.autoUpdate": "onlyEnabledExtensions",
-  "extensions.ignoreRecommendations": true,
   "files.eol": "\n",
   "files.insertFinalNewline": true,
   "files.simpleDialog.enable": true,
@@ -55,22 +45,28 @@
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "git.untrackedChanges": "separate",
+  "scm.diffDecorationsGutterWidth": 2,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.fontWeight": "300",
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.tabs.enabled": true,
-  "scm.diffDecorationsGutterWidth": 2,
-  "debug.onTaskErrors": "debugAnyway",
-  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.editor.limit.enabled": true,
+  "workbench.editor.limit.perEditorGroup": true,
+  "workbench.editor.limit.value": 5,
   "search.exclude": {
+    "**/*.snap": true,
+    "**/*.svg": true,
     "**/.git": true,
-    "**/.github": true,
+    "**/.github": false,
     "**/.nuxt": true,
     "**/.output": true,
     "**/.pnpm": true,
     "**/.vscode": true,
     "**/.yarn": true,
+    "**/assets": true,
     "**/bower_components": true,
     "**/dist/**": true,
     "**/logs": true,
@@ -78,11 +74,20 @@
     "**/out/**": true,
     "**/package-lock.json": true,
     "**/pnpm-lock.yaml": true,
-    "**/tmp": true,
-    "**/yarn.lock": true
+    "**/public": true,
+    "**/temp": true,
+    "**/yarn.lock": true,
+    "**/CHANGELOG*": true,
+    "**/LICENSE*": true,
   },
 
-  // Extension configs
+  // ==========  Global Level Config, needs to put in User Settings ========== 
+  "window.dialogStyle": "custom",
+  "window.nativeTabs": true, // this is great, macOS only
+  "window.titleBarStyle": "custom",
+  "extensions.autoUpdate": "onlyEnabledExtensions",
+
+  // ========== Extension configs ========== 
   "emmet.showSuggestionsAsSnippets": true,
   "emmet.triggerExpansionOnTab": false,
   "errorLens.enabledDiagnosticLevels": [
@@ -100,30 +105,37 @@
     "enable": true
   },
   "eslint.quiet": true,
+  // Silent the stylistic rules in you IDE, but still auto fix them
   "eslint.rules.customizations": [
-    {
-      "rule": "@stylistic/*",
-      "severity": "off"
-    }
+    { "rule": "style/*", "severity": "off" },
+    { "rule": "format/*", "severity": "off" },
+    { "rule": "*-indent", "severity": "off" },
+    { "rule": "*-spacing", "severity": "off" },
+    { "rule": "*-spaces", "severity": "off" },
+    { "rule": "*-order", "severity": "off" },
+    { "rule": "*-dangle", "severity": "off" },
+    { "rule": "*-newline", "severity": "off" },
+    { "rule": "*quotes", "severity": "off" },
+    { "rule": "*semi", "severity": "off" }
   ],
   "eslint.validate": [
     "javascript",
-    "typescript",
     "javascriptreact",
+    "typescript",
     "typescriptreact",
     "vue",
     "html",
     "markdown",
     "json",
     "jsonc",
-    "json5"
+    "yaml",
+    "toml"
   ],
 
   "github.copilot.enable": {
     "*": true,
     "markdown": true,
     "plaintext": false,
-    "yaml": false
   },
   "cSpell.allowCompoundWords": true,
   "cSpell.language": "en,en-US",
@@ -189,7 +201,7 @@
   "prettier.semi": false,
   "prettier.singleQuote": true,
 
-  // File Nesting
+  // ========== File Nesting ==========
   // this might not be up to date with the repo, please check yourself
   // https://github.com/antfu/vscode-file-nesting-config
   "explorer.fileNesting.enabled": true,
